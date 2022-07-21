@@ -4,7 +4,9 @@
     align-items: stretch;
     justify-content: center;
     flex-wrap: wrap;
+    border: 5px double #1C6EA4;
 }
+
 
 .recipes > div {
     margin: 2em;

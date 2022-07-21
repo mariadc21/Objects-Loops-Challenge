@@ -30,7 +30,25 @@ let recipes = [
 // Your code goes here:
 
 // Each recipe should be in its own div, that can be recCont. We are declaring it here since we will want to change its value with each itteration of the loop.
+let recCount;
+ for(let i=0; i < recipes.length; i++){
+        let t=(recipes[i]["title"]);
+        let tim=( recipes[i]["time"]);
+        let cal=( recipes[i]["calories"]);
+        // let ingred=( recipes[i].ingredients);
+        let ingred=  recipes[i]["ingredients"].map((ingredients) =>{
+           return '<li>' + (ingredients)+ '</li>'}).join('');
+        console.log(ingred)
+        recCount=document.createElement('div')
+        recCount.innerHTML=`
+            <h2>${t}</h2>
+            <h3>Time: ${tim}</h3>
+            <h3>Calories: ${cal}</h3>
+            <h3>Ingrediants:</h3>
+            <ul>${ingred}</ul>`
+        
+        document.querySelector(".recipes").appendChild(recCount)
 
-let recCont
+        }
 
 // HINT: Using .map will be very helpful when itterating through the ingredients array.
